@@ -1,0 +1,123 @@
+<!-- Start main-content -->
+<div class="main-content">
+  <!-- Section: inner-header -->
+  <section class="inner-header divider parallax  overlay-dark-5 section_central_image"
+    data-bg-img="images/jindo_central_moment/IMG_0004.jpg">
+    <div class="container pt-70 pb-20">
+      <!-- Section Content -->
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12" style="margin-top: 180px;">
+            <h2 class="title text-white text-uppercase">Hình Ảnh & Video Trung Tâm Jindo</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <h1 id="test"></h1>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Works Filter -->
+          <div class="portfolio-filter font-alt align-center">
+            <a href="#" class="active" data-filter="*">All</a>
+            <a href="#video" class="" data-filter=".video">Video</a>
+            <a href="#album" class="" data-filter=".album">Album Ảnh</a>
+          </div>
+          <!-- End Works Filter -->
+          <!-- Portfolio Gallery Grid -->
+          <div id="grid" class="gallery-isotope grid-4 masonry gutter
+            clearfix">
+            <!--if type of it is video -->
+            <% medias.forEach(media =>{ %>
+            <% if(media.type == "video"){ %>
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item video">
+              <div class="thumb" style="cursor: pointer;">
+                <div class="image_central_jindo" style='background:
+                          url("<%=media.path%>");' alt="project">
+                </div>
+                <div class="overlay-shade" id="trigger_video_<%=media.id%>"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="styled-icons icon-sm icon-dark icon-circled
+                              icon-theme-colored">
+                      <a class="popup-youtube" id="video_triggered_<%=media.id%>" href="<%=media.link_yt%>"><i
+                          class="fa fa-youtube-play"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-description">
+                <h5 class="title" style="font-weight: 600;"><a href="#"><%=media.title%></a></h5>
+                <span class="category"><span
+                    style="text-transform: capitalize; font-weight: 600;"><%=media.type%></span></span>
+              </div>
+              <div style="padding-bottom: 10px;"></div>
+            </div>
+            <!-- Portfolio Item End -->
+            <script>
+              $(document).on('click', '#trigger_video_' + '<%=media.id%>', function (event) {
+                event.preventDefault();
+                $('#video_triggered_' + '<%=media.id%>').click()
+              })
+
+            </script>
+            <%}%>
+              <%})%>
+            <!--End if it's type is video -->
+            <!-- Type is album-->
+            <% arr_all.forEach(element =>{%>
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item album">
+              <div class="thumb">
+                <div class="flexslider-wrapper">
+                  <div class="flexslider">
+                    <ul class="slides">
+                      <%element.forEach(e=>{%>
+                      <li><a href="<%=e.medium%>" title="<%=e.album%>">
+                          <div class='image_central_jindo' style='background:
+                        url("<%=e.path%>");' alt=""></div>
+                        </a></li>
+                      <%})%>
+                    </ul>
+                  </div>
+                </div>
+                <div class="overlay-shade" id="trigger_picture_<%=element[0].id%>" style="cursor: pointer;"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a id="album_triggered_<%=element[0].id%>" href="#"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                $(document).on('click', '#trigger_picture_' + '<%=element[0].id%>', function (event) {
+                  event.preventDefault();
+                  $('#album_triggered_' + '<%=element[0].id%>').click()
+                })
+              </script>
+              <div class="portfolio-description" style="font-weight: 600;">
+                <h5 class="title" style="font-weight: 600;"><a href="#"><%=element[0].album%></a></h5>
+                <span class="category"><span><%=element.length%> ảnh</span></span>
+              </div>
+              <div style="padding-bottom: 10px;"></div>
+            </div>
+            <!-- Portfolio Item End -->
+            <%})%>
+          </div>
+          <!-- End Portfolio Gallery Grid -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end main-content -->
+<!-- JS | Custom script for all pages -->
+<script src="js/custom.js"></script>
+
+</body>
+
+</html>

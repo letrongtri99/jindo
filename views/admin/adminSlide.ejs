@@ -1,0 +1,105 @@
+<div ng-controller="slidesCtrl" ng-init="initSlidesData()" class="container-fluid">
+    <a role="button" ng-click="moreslide()" href="" class="btn btn-info" style="width:18%;margin-bottom: 20px;">Thêm Slide mới</a>
+    <div class="card shadow mb-4" style="padding: 15px;" ng-repeat="slide in slides">
+        <div class="card-header py-3" style="margin-bottom: 10px;text-align: center;">
+            <h6 class=" font-weight-bold text-primary" style="font-size: 20px;">Slides {{slide.image}}</h6>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tên của Slide</label>
+                <input ng-model="slide.image" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tiêu đề Slide</label>
+                <input ng-model="slide.title" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tiêu đề phụ Slide</label>
+                <input ng-model="slide.description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập nội dung Slide</label>
+                <input ng-model="slide.short_description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập nút cho Slide</label>
+                <input ng-model="slide.button" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Điều hướng cho Slide (nhập url)</label>
+                <input ng-model="slide.button_url" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập vị trí Slide</label>
+                <select class="form-control" id="slide" ng-model="slide.position">
+                    <option value="left">Bên trái</option>
+                    <option value="center">Chính giữa</option>
+                    <option value="right">Bên phải</option>
+                  </select>
+            </div>
+            <div class="form-group">
+                <label>Ảnh slide (khuyến cáo đăng ảnh kích cỡ 1260px x 500px)</label>
+                <input type="file" onchange="angular.element(this).scope().uploadImage(event)" ng-click="passId(slide.id)" class="form-control" />
+            </div>
+            <div style="margin-bottom: 10px;" id="imgHelp" role="alert">{{slide.alert}}</div>
+            <div ng-style="{'background-image':'url('+slide.url+')'}" style="width: 100%;height: 500px;background-size: cover;background-repeat: no-repeat;background-position: center;margin: 0 auto"></div>
+            <br>
+            <div style="text-align: right;">
+                <button ng-click="update(slide.id)" type="button" class="btn btn-primary">Chỉnh Sửa</button>
+                <button ng-click="delete(slide.id)" type="button" class="btn btn-primary">Xóa Slide</button>
+            </div>
+        </form>
+    </div>
+    <div ng-show="slides.myVar" id="newslide" class="card shadow mb-4" style="padding: 15px;">
+        <div class="card-header py-3" style="margin-bottom: 10px;text-align: center;">
+            <h6 class=" font-weight-bold text-primary" style="font-size: 20px;">Slide mới</h6>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tên của Slide</label>
+                <input ng-model="slides.image" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tiêu đề Slide</label>
+                <input ng-model="slides.title" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tiêu đề phụ Slide</label>
+                <input ng-model="slides.description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập nội dung Slide</label>
+                <input ng-model="slides.short_description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập nút cho Slide</label>
+                <input ng-model="slides.button" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Điều hướng cho Slide (nhập url)</label>
+                <input ng-model="slides.button_url" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập vị trí Slide</label>
+                <select class="form-control" id="slide" ng-model="slides.position">
+                    <option value="left">Bên trái</option>
+                    <option value="center">Chính giữa</option>
+                    <option value="right">Bên phải</option>
+                  </select>
+            </div>
+            <div class="form-group">
+                <label>Ảnh slide</label>
+                <input type="file" onchange="angular.element(this).scope().uploadImageNew(event)" class="form-control" />
+            </div>
+            <div style="margin-bottom: 10px;" id="imgHelp" role="alert">{{slides.alert}}</div>
+            <div ng-style="{'background-image':'url('+slides.url+')'}" style="width: 100%;height: 500px;background-size: cover;background-repeat: no-repeat;background-position: center;margin: 0 auto"></div>
+
+
+            <br>
+            <div style="text-align: right;">
+                <button ng-click="more()" type="button" class="btn btn-primary">Thêm</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/admin/slide.js"></script>
+</div>

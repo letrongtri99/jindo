@@ -1,0 +1,56 @@
+<style>
+    div.preview-images>div {
+        width: 273px;
+        height: 190px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+        margin-right: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .image-upload>input {
+        display: none;
+    }
+    
+    .image-upload div {
+        width: 80px;
+        cursor: pointer;
+    }
+</style>
+<div id="ALBUM" ng-controller="infoalbum" class="container-fluid">
+    <div class="card shadow mb-4" style="padding: 15px;">
+        <div class="card-header py-1" style="margin-bottom: 10px;text-align: center;">
+            <h6 class=" font-weight-bold text-primary" style="font-size: 20px;">Tạo album mới
+            </h6>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nhập tên album</label>
+            <input maxlength="255" ng-model="album.name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="example-input-file">Đăng ảnh cho album</label>
+        </div>
+        <div style="margin-bottom: 10px;" id="imgHelp" role="alert">{{album.alert}}</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="preview-images"></div>
+                <div class="image-upload">
+                    <label for="file-input">
+                        <div style="width:273px;height:190px;border: 0.1px solid #ccb9b9;">
+                            <div id="pict" style="background-image: url('https://static.thenounproject.com/png/187803-200.png');width: 100px;height: 100px;background-position: center;background-size: cover;margin-left: 80px;margin-top: 40px;"></div>
+                        </div>
+                    </label>
+
+                    <input id="file-input" onchange="angular.element(this).scope().uploadImage(event)" type="file" />
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align: right;">
+            <button ng-click="createAlbum()" type="button" class="btn btn-primary">Tạo Mới</button>
+        </div>
+    </div>
+    <script src="js/admin/detailsalbum.js"></script>
+</div>

@@ -1,0 +1,34 @@
+<div ng-controller="newschedules" class="container-fluid">
+    <div class="card shadow mb-4" style="padding: 15px;">
+        <div class="card-header py-3" style="margin-bottom: 10px;text-align: center;">
+            <h6 class=" font-weight-bold text-primary" style="margin-bottom: 0px; font-size: 20px;">THÊM LỊCH HỌC MỚI</h6>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tên quận</label>
+                <textarea maxlength="255" ng-model="schedules.district" type="text" class="form-control"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập tên sân bóng</label>
+                <textarea ng-model="schedules.stadium" type="text" class="form-control" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập địa điểm sân bóng</label>
+                <textarea ng-model="schedules.location" type="text" class="form-control" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nhập thời gian tập luyện</label>
+                <textarea ng-model="schedules.time" type="text" class="form-control" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Dán đường link map của sân tập</label>
+                <textarea ng-model="schedules.stadium_url" type="text" class="form-control" rows="2"></textarea>
+            </div>
+            <div style="text-align: right;">
+                <button ng-click="upload()" type="button" class="btn btn-primary">Tạo Mới</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/admin/newschedules.js"></script>
+</div>

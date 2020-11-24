@@ -1,0 +1,100 @@
+<link rel="stylesheet" type="text/css" href="theme/css/util_schedules.css">
+<link rel="stylesheet" type="text/css" href="theme/css/main_schedules.css">
+<!-- Section: Schedule -->
+<section id="Schedule" class="scheduling">
+
+  <div class="container pb-60">
+    <div class="section-title mb-10">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-uppercase text-theme-colored title line-bottom line-height-1 mt-0"
+            style="color: white !important;">Lịch
+            học <span class="text-theme-color-2 font-weight-400">Bóng đá & Bóng Rổ</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="price_of_schedule">
+        <div class="row">
+          <%courses.forEach(function(course){%>
+            <div class="col-md-4 col-xs-12 col-sm-4">
+              <span class="schedules_prices">
+                <%=course.typecourse%>: 
+                <%if(course.priceafter != course.price){%>
+                  <span><%=course.priceafter%>vnd</span>
+                <%}else{%>
+                    <span><%=course.price%>vnd</span>
+                  <%}%>
+              </span>
+            </div>
+          <%})%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-5">
+          <!-- Google Map HTML Codes -->
+          <iframe width="600" height="500" id="gmap_canvas"
+            src="https://maps.google.com/maps?q=s%E1%BB%91%2046%20L%C3%AA%20H%E1%BB%93ng%20Phong%20-%20H%C3%A0%20%C4%90%C3%B4ng%20-%20H%C3%A0%20N%E1%BB%99i%20)&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+            href="https://www.bitgeeks.net/embed-google-map/"></a>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              height: 500px;
+              width: 600px;
+            }
+
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              height: 500px;
+              width: 600px;
+            }
+          </style>
+        </div>
+        <!-- Start -->
+        <div class="container-table100 col-sm-7 col-md-8">
+          <div class="table100 ver1 scroll">
+            <table data-vertable="ver1">
+              <thead>
+                <tr class="row100 head">
+                  <th class="column100 column1">
+                    Quận, Huyện
+                  </th>
+                  <th class="column100">Sân</th>
+                  <th class="column100">Lịch học bóng đá</th>
+                  <th class="column100">Địa chỉ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%arr_result.forEach(function(distr) {%>
+                <tr class="row100">
+                  <td rowspan="<%=distr.length%>" class="column100 column1"><%=distr[0].district%></td>
+                  <td class="column100 hovercol" data-url="<%=distr[0].stadium_url%>">
+                    <%=distr[0].stadium%>
+                  </td>
+                  <td class=" column100"><%=distr[0].timer%> hàng tuần</td>
+                  <td class="column100"><%=distr[0].location%></td>
+                </tr>
+                <%if(distr.length > 1){%>
+                <%for(let i = 1; i < distr.length; i++){%>
+                <tr class="row100">
+                  <td class="column100 hovercol" data-url="<%=distr[i].stadium_url%>">
+                    <%=distr[i].stadium%></td>
+                  <td class="column100"><%=distr[i].timer%> hàng tuần</td>
+                  <td class="column100"><%=distr[i].location%></td>
+                </tr>
+                <%}%>
+                <%}%>
+                <%})%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--End-->
+    </div>
+  </div>
+</section>
+<!-- Section: Contact -->

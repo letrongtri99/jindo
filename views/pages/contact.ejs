@@ -1,0 +1,88 @@
+<div class="main-content">
+
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax  overlay-dark-5 section_central_image"
+    data-bg-img="images/jindo_central_moment/IMG_0004.jpg">
+      <div class="container pt-70 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-12" style="margin-top: 180px;">
+              <h2 class="title text-white text-uppercase">Thông tin liên hệ</h2>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section>
+
+    <!-- Divider: Contact -->
+    <section class="divider">
+      <div class="container pt-0">
+        <div class="col-md-12 text-center pt-30 mb-40">
+            <div class="contact-logo">
+                <img src="theme/images/logo_jindo2.png" alt="" style="width: 130px;">
+            </div>
+            <h3 class="pt-20 text-center text-uppercase title line-height-1 mt-0 about_title">Bóng đá Jindo - Nâng cao tầm vóc người Việt</h3>
+        </div>
+        <div class="row pt-30">
+          <div class="col-md-6 info-contact">
+          <!-- Google Map HTML Codes -->
+          <div>
+            <p>Bóng đá Jindo là một trong những câu lạc bộ, học viện bóng đá, trung tâm dạy bóng đá tốt nhất tại Hà Nội</p>
+            <ul class="list-inline mt-5 info-contact-ul ">
+                <li class="m-0 pl-10 pr-10 "> <i class="fa fa-map-marker text-theme-color-2 mr-5 "></i> {{configs.address}}</li><br>
+                <li class="m-0 pl-10 pr-10" > <i class="fa fa-facebook text-theme-color-2 mr-5 "></i> <a  style="color: #df4a6c; font-weight: 550;" href="{{configs.link_fb}}" target="_blank">{{configs.link_fb}}</a> </li><br>
+                <li class="m-0 pl-10 pr-10" > <i class="fa fa-phone text-theme-color-2 mr-5 "></i> <a  style="color: #df4a6c; font-weight: 550;" href="tel:{{configs.phone_number}}">{{configs.phone_number}}</a> </li><br>
+                <li class="m-0 pl-10 pr-10" > <i class="fa fa-envelope-o text-theme-color-2 mr-5 "></i> <a  style="color: #df4a6c; font-weight: 550;" href="mailto:{{configs.mail}}">{{configs.mail}}</a></li><br>
+                <li class="m-0 pl-10 pr-10" > <i class="fa fa-globe text-theme-color-2 mr-5 "></i> <a  style="color: #df4a6c; font-weight: 550;" href="http://thethaojindo.vn">thethaojindo.vn</a> </li><br>
+            </ul>
+          </div>
+
+          </div>
+          <div class="col-md-6"  ng-controller="contactCtrl">
+            <h4 class="mt-0 mb-30 line-bottom text-uppercase">Thông tin phụ huynh</h4>
+            <!-- Contact Form -->
+            <form id="contact_form">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="form_name">Họ tên <small>*</small></label>
+                    <input ng-model="Contacts.name"  class="form-control" type="text" placeholder="Nhập họ tên..." required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Email <small>*</small></label>
+                    <input ng-model="Contacts.email" class="form-control required email" type="email" placeholder="Nhập Email..." required>
+                  </div>
+                </div>
+              </div>                
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="form_name">Địa chỉ <small>*</small></label>
+                    <input ng-model="Contacts.address" class="form-control required" type="text" placeholder="Nhập Địa chỉ..."required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="form_phone">SĐT</label>
+                    <input ng-model="Contacts.phone" class="form-control" type="text" placeholder="Nhập SĐT..." required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form_name">Giải đáp thắc mắc</label>
+                <textarea ng-model="Contacts.question" class="form-control required" rows="5" placeholder="Giải đáp thắc mắc"></textarea>
+              </div>
+              <div class="form-group">
+                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                <button ng-click="Contacts.submit()" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Gửi yêu cầu</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

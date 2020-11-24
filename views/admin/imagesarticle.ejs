@@ -1,0 +1,46 @@
+<style>
+    .btn-info {
+        font-size: 12px;
+        padding: 3px;
+    }
+    
+    td.ng-scope {
+        padding: 6px;
+    }
+    
+    th.sorting_disabled {
+        width: 100px;
+    }
+    
+    .el0 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 600px;
+        max-width: 650px;
+    }
+</style>
+
+<div ng-controller="hinhanh" ng-init="showTableImages()">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh Sách Album Ảnh</h6>
+        </div>
+        <a href="/newAlbum" role="button" ng-click="addnew()" class="btn btn-info" style="width:12%;margin-left: 20px;margin-top: 10px;">Thêm Album Ảnh Mới</a>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="table" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên Album Ảnh</th>
+                            <th>Công Cụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin/tablealbum.js"></script>
+</div>

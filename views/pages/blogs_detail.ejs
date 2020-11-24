@@ -1,0 +1,126 @@
+
+<!--Blog Detail Content-->
+<!-- Start main-content -->
+<div class="main-content">
+    <section class="inner-header divider parallax  overlay-dark-5 section_central_image"
+    data-bg-img="images/jindo_central_moment/IMG_0004.jpg">
+      <div class="container pt-70 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-12" style="margin-top: 180px;">
+              <h2 class="title text-white text-uppercase"><%=article.category%></h2>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section>
+
+    <!-- Section: Upcoming Events -->
+    <section id="upcoming-events" class="divider layer-overlay overlay-white-8">
+      <div class="container pb-30 pt-30">
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-8">
+                <h3 class="title text-uppercase mb-20 title-blog font-weight-700"><%=article.title%></h3>
+                <div class="entry-meta m-b-10">
+                  <ul class="list-inline">
+                    <li>Đăng ngày:  <span class="text-theme-color-2"> <%=postTime%></span></li>                    
+                  </ul>
+                </div>
+                <p class="short-description"><%=article.summary%></p>
+                <!--Content-->
+          <div class="details-content">
+            <p><%-article.content%></p>
+
+            <!--Facebook Like-->
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/blogs_detail?id=<%=article.id%>" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+            <!--Facebook Comment-->
+            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments/blogs_detail?id=<%=article.id%>" data-width="" data-numposts="5"></div>
+        </div>
+            </div>
+            <div class="col-md-4">
+              <div class="sidebar sidebar-right mt-sm-30">
+                    <div class="widget">
+                  <p class="sidebar-title mb-20  pb-20 line-bottom">Video bóng đá</p>
+                  <div class="widget-image-carousel" ng-controller="vidsCtrl" ng-init="vidsData()">
+                            <div class="item-video mb-20" ng-repeat="video in videos">
+                      <a href="{{video.link_yt}}" target="_blank">
+                        <img src="{{video.path}}"  class="img-responsive">
+                      </a>
+                      <p class="sidebar-subtitle">
+                        <a class="font-16" href="{{video.link_yt}}" target="_blank">{{video.title}}</a>
+                      </p>
+                    </div>
+                          
+                            
+                          </div>
+                </div>
+                
+                    <div class="widget">
+                  <p class="sidebar-title mb-20  p-b-10 line-bottom">Tin tức mới nhất</p>
+                  <div class="latest-posts" ng-controller="newsCtrl" ng-init="newsData()">                    
+                            <article class="post media-post clearfix m-b-10" ng-repeat="article in articles">
+                      <a class="post-thumb" href="/bai-viet-{{article.slug}}">
+                        <img style="width: 150px;" ng-src="{{article.cover_image}}" alt="Lớp học bóng đá trẻ em quận Bắc Từ Liêm – Hà Nội" class="img-responsive">                                             
+                      </a>
+                      <div class="post-right">
+                        <p class="post-title m-t-0">
+                          <a class="font-15" href="/bai-viet-{{article.slug}}">{{article.title}}  </a>
+                        </p>
+                      </div>
+                            </article>
+
+                      
+                  </div>
+                </div>
+                  </div>
+            </div>
+            </div>
+
+            <!--Bai viet lien quan-->
+            <div class="blog-relative mt-30">
+              <h2 class="text-uppercase font-weight-500 mt-0 font-28 line-bottom">Bài viết <span class="text-theme-color-2 font-weight-400">Ngẫu nhiên</span></h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="owl-carousel-4col" data-dots="true">
+                    <%articleRd.forEach(function(articleRd) {%>
+                      <div class="item">
+                        <article class="post clearfix bg-lighter">
+                            <div class="entry-header">
+                                <div class="post-thumb thumb">
+                                    <img src="<%=articleRd.cover_image%>" alt="" class="img-responsive img-fullwidth img-slide-blog">
+                                </div>
+                            </div>
+                            <div class="entry-content p-15 pt-10 pb-10">
+                                <div class="entry-meta media no-bg no-border mt-0 mb-10">
+                                    <div class="media-body pl-0">
+                                        <div class="event-content pull-left flip">
+                                            <h4 class="entry-title text-uppercase font-weight-600 m-0 mt-5">
+                                                <a class="title-blog limited-text-2" href="/bai-viet-<%=articleRd.slug%>">
+                                                    <%=articleRd.title%>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5 limited-text-3">
+                                    <%=articleRd.summary%>
+                                </div>
+                                <a class="text-theme-color-2 font-14 ml-0" href="/bai-viet-<%=articleRd.slug%>">Đọc thêm</a>
+                            </div>
+                        </article>
+                    </div> 
+                   <%})%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- end main-content -->
+

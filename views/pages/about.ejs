@@ -1,0 +1,154 @@
+
+<!--About Content-->
+
+    <section class="inner-header divider parallax  overlay-dark-5 section_central_image"
+    data-bg-img="images/jindo_central_moment/IMG_0004.jpg" >
+    <!-- <div class="container pt-70 pb-20"> -->
+      <!-- Section Content -->
+      <!-- <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="title text-white">Gallery</h2> -->
+            <!-- <ol class="breadcrumb text-left text-black mt-10">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Pages</a></li>
+              <li class="active text-gray-silver">Page Title</li>
+            </ol> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="container" style="margin:30px auto" ng-controller="layoutCtrl" ng-init="initData()">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-uppercase text-theme-colored title line-bottom line-height-1 mt-0">Giới thiệu <span class="text-theme-color-2 font-weight-400"> trung tâm</span></h2>
+            </div>
+            <div class="col-md-12 text-center pt-30 mb-40">
+                <div class="contact-logo">
+                    <img src="theme/images/logo_jindo2.png" alt="" style="width: 130px;">
+                </div>
+                <h3 class="pt-20 text-center text-uppercase title line-height-1 mt-0 about_title">Bóng đá Jindo - Nâng cao tầm vóc người Việt</h3>
+            </div>
+            <div class="col-md-12 about-content" style="text-align: justify;">                
+                <p> Trung tâm bóng đá JINDO - Nơi đào tạo đá bóng cho trẻ em tại Hà Nội. Với các
+                    khóa học, lớp học bóng đá từ cơ bản đến nâng cao giúp cho các em có thể phát
+                    triển toàn diện. Trung tâm đã và đang là địa điểm thu hút rất nhiều học viên,
+                    được đánh giá cao về chất lượng.</p>
+                <p>
+                    Thể thao giúp trẻ nâng cao các kĩ năng vận động thô và tinh
+                    như sự phối hợp tay – mắt, chân – mắt… để trẻ kiểm soát cơ
+                    thể mình tốt hơn, xây dựng phong thái tự tin từ cách đi
+                    đứng, ứng xử. Chơi thể thao có thể giúp trẻ phát triển nhiều
+                    tính cách tích cực như nỗ lực phấn đấu, cạnh tranh công
+                    bằng, làm việc nhóm và hòa nhập với mọi người. Một số môn
+                    thể thao có tính chiến thuật như bóng đá còn giúp trẻ rèn
+                    luyện tư duy, phát triển sự tự tin của trẻ một cách tự nhiên
+                    và hồn nhiên nhất theo đúng độ tuổi của trẻ. 
+                    </p>
+                    <p>
+                    Chúng tôi tự hào là nơi xây dựng và phát triển niềm đam mê
+                    của các em thiếu nhi. Hiện tại trung tâm có rất nhiều lớp
+                    học bóng đá được tổ chức tại nhiều quận trên địa bàn thành
+                    phố Hà Nội. Với đội ngũ giảng viên là các HLV chuyên nghiệp
+                    từ các CLB Bóng đá và từ giảng viên các trường  Đại học Thể
+                    thao.
+                </p>
+                <p> Đăng ký lớp học bóng đá cho trẻ em, hãy liên hệ ngay với Trung tâm dạy bóng đá JINDO</p>
+
+                Website: https://thethaojindo.vn/<br>
+                Hotline: {{configs.phone_number}}<br>
+                Email: {{configs.mail}}<br>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+<!-- Section: Contact -->
+<section id="register" ng-controller="signUp" class="register-container">
+    <div class="container pb-60">
+        <div class="section-title mb-10">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mt-0 mb-0 text-uppercase line-bottom text-white font-28">Đăng ký <span class="text-theme-color-2 font-weight-400">Học</span></h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="section-content" ng-controller="courseCtrl" ng-init="initCourseData()">
+            <div class="row">
+                <div class="col-md-6 pb-10">
+                    <!-- Ưu đãi -->
+                    <div class="reward-container">
+                        <h2 class="text-pink coupon-title">Đăng ký học nhận ngay ưu đãi lớn</h2>
+                        <p class="coupon-p">{{courses[0].typecourse}}: <span class="text-pink">{{courses[0].price}}vnd</span></p>
+                        <p class="coupon-p">{{courses[1].typecourse}}: <del>{{courses[1].price}}vnd</del>   <span class="text-pink">{{courses[1].priceafter}}vnd </span>(-{{courses[1].sale}})</p>
+                        <p class="coupon-p">{{courses[2].typecourse}}: <del>{{courses[2].price}}vnd</del>   <span class="text-pink">{{courses[2].priceafter}}vnd </span>(-{{courses[2].sale}})</p>
+                        <p class="coupon-p">Tặng 1 bộ đồng phục 250k, 1 đôi tất 50k, 1 balo dây rút 50k</p>
+                    </div>
+
+                    <div class="reward-pic">
+                        <img src="theme/images/reward.jpg" alt="" style="width: 100%; height: 250px;">
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="register-form-container">
+                        <!-- Form đăng ký-->
+                        <form id="contact_form">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="">Thông tin phụ huynh</label>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.name_parent" class="form-control" type="text" placeholder=" Họ tên">
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.address" class="form-control" type="text" placeholder="Địa chỉ ">
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.phone" class="form-control" type="text" placeholder="SĐT">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Thông tin học viên</label>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.name_kid" class="form-control" type="text" placeholder="Họ tên ">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-30 ">
+                                            <input id="datepicker" class="form-control" type="text" placeholder="Năm sinh">
+                                        </div>
+                                        <div class="form-group col-md-6  mb-30">
+                                            <select class="form-control" id="sex" ng-model="Registers.sex" style="color: #a8a8a8">
+                      <option value="">Giới Tính</option>
+                      <option value="Nam">Nam</option>
+                      <option value="Nữ">Nữ</option>
+                    </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <select class="form-control" id="courses" ng-model="Registers.courses" style="color: #a8a8a8;">
+                  <option value="">Khóa Học</option>
+                  <option value="Khóa Học Bóng Đá">Khóa Học Bóng Đá</option>
+                  <option value="Khóa Học Bóng Rổ">Khóa Học Bóng Rổ</option>
+                </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group ">
+                                <textarea ng-model="Registers.question" class="form-control required " rows="5 " placeholder="Giải đáp thắc mắc "></textarea>
+                            </div>
+                            <div class="form-group ">
+                                <button ng-click="Registers.submit()" class="btn btn-flat btn-theme-colored text-uppercase mt-20 mb-sm-30 border-left-theme-color-2-4px ">Đăng ký ngay</button>
+                            </div>
+                        </form>
+                        <!-- Contact Form Validation-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

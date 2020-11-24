@@ -1,0 +1,677 @@
+<!-- Start main-content -->
+
+<!-- Section: home -->
+<section id="home">
+    <div class="container-fluid p-0">
+
+        <!-- Slider Revolution Start -->
+        <div class="rev_slider_wrapper">
+            <div class="rev_slider" data-version="5.0">
+                <ul>
+
+                    <!-- SLIDE  -->
+                    <%slides.forEach(function(slide) {%>
+                        <li data-index="rs-<%=slide.id%>" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="<%=slide.url%>" data-rotate="0" data-saveperformance="off" data-title="Slide <%=slide.id%>"
+                            data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="<%=slide.url%>" alt="" data-bgposition="center 10%" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+                            <%if(slide.position == 'left') {%>
+                                <!-- LAYERS -->
+
+                                <!-- LAYER NR. 1: TITLE -->
+                                <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway" id="rs-1-layer-1" data-x="['left']" data-hoffset="['30']" data-y="['middle']" data-voffset="['-110']" data-fontsize="['100']" data-lineheight="['110']" data-width="none" data-height="none"
+                                    data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:700;">
+                                    <%=slide.title%>
+                                </div>
+
+                                <!-- LAYER NR. 2: DESCRIPTION -->
+                                <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway bg-theme-colored-transparent border-left-theme-color-2-6px pl-20 pr-20" id="rs-1-layer-2" data-x="['left']" data-hoffset="['35']" data-y="['middle']" data-voffset="['-25']" data-fontsize="['35']"
+                                    data-lineheight="['54']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:600;">
+                                    <%=slide.description%>
+                                </div>
+
+                                <!-- LAYER NR. 3: SHORT DESCRIPTION -->
+                                <div class="tp-caption tp-resizeme text-white" id="rs-1-layer-3" data-x="['left']" data-hoffset="['35']" data-y="['middle']" data-voffset="['35']" data-fontsize="['16']" data-lineheight="['28']" data-width="none" data-height="none" data-whitespace="nowrap"
+                                    data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                    data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">
+                                    <%=slide.short_description%>
+                                </div>
+
+                                <!-- LAYER NR. 4: DANG KY NGAY -->
+                                <div class="tp-caption tp-resizeme" id="rs-1-layer-4" data-x="['left']" data-hoffset="['35']" data-y="['middle']" data-voffset="['100']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1400" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-flat btn-theme-colored border-left-theme-color-2-6px pl-20 pr-20" href="<%=slide.button_url%>"><%=slide.button%></a>
+                                </div>
+                        </li>
+                        <%} else if(slide.position == 'center') {%>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption tp-resizeme text-uppercase  bg-dark-transparent-5 text-white font-raleway border-left-theme-color-2-6px border-right-theme-color-2-6px pl-30 pr-30" id="rs-2-layer-1" data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['-90']"
+                                data-fontsize="['28']" data-lineheight="['54']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:400; border-radius: 30px;">
+                                <%=slide.description%>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption tp-resizeme text-uppercase bg-theme-colored-transparent text-white font-raleway pl-30 pr-30" id="rs-2-layer-2" data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['-20']" data-fontsize="['48']" data-lineheight="['70']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:700; border-radius: 30px;">
+                                <%=slide.title%>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption tp-resizeme text-white text-center" id="rs-2-layer-3" data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['50']" data-fontsize="['16']" data-lineheight="['28']" data-width="none" data-height="none" data-whitespace="nowrap"
+                                data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">
+                                <%=slide.short_description%>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption tp-resizeme" id="rs-2-layer-4" data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['115']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1400" data-splitin="none"
+                                data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-default btn-circled btn-transparent pl-20 pr-20" href="<%=slide.button_url%>"><%=slide.button%></a>
+                            </div>
+                            </li>
+                            <%} else {%>
+
+                                <!-- LAYERS -->
+
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-resizeme text-uppercase text-white font-raleway bg-theme-colored-transparent border-right-theme-color-2-6px pr-20 pl-20" id="rs-3-layer-1" data-x="['right']" data-hoffset="['30']" data-y="['middle']" data-voffset="['-90']" data-fontsize="['64']"
+                                    data-lineheight="['72']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:600;">
+                                    <%=slide.title%>
+                                </div>
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption tp-resizeme text-uppercase bg-dark-transparent-6 text-white font-raleway pl-20 pr-20" id="rs-3-layer-2" data-x="['right']" data-hoffset="['35']" data-y="['middle']" data-voffset="['-25']" data-fontsize="['32']" data-lineheight="['54']"
+                                    data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight:600;">
+                                    <%=slide.description%>
+                                </div>
+
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption tp-resizeme text-white text-right" id="rs-3-layer-3" data-x="['right']" data-hoffset="['35']" data-y="['middle']" data-voffset="['30']" data-fontsize="['16']" data-lineheight="['28']" data-width="none" data-height="none" data-whitespace="nowrap"
+                                    data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                    data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">
+                                    <%=slide.short_description%>
+                                </div>
+
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption tp-resizeme" id="rs-3-layer-4" data-x="['right']" data-hoffset="['35']" data-y="['middle']" data-voffset="['95']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1400" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-colored btn-lg btn-flat btn-theme-colored btn-theme-colored border-right-theme-color-2-6px pl-20 pr-20" href="<%=slide.button_url%>"><%=slide.button%></a>
+                                </div>
+                                </li>
+
+                                <%}
+                })%>
+
+
+                </ul>
+            </div>
+            <!-- end .rev_slider -->
+        </div>
+        <!-- end .rev_slider_wrapper -->
+        <script>
+            $(document).ready(function(e) {
+                $(".rev_slider").revolution({
+                    sliderType: "standard",
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 5000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "zeus",
+                            enable: true,
+                            hide_onmobile: true,
+                            hide_under: 600,
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            tmp: '<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div> </div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: true,
+                            hide_under: 600,
+                            style: "metis",
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 30,
+                            space: 5,
+                            tmp: '<span class="tp-bullet-img-wrap">  <span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>'
+                        }
+                    },
+                    responsiveLevels: [1240, 1024, 778],
+                    visibilityLevels: [1240, 1024, 778],
+                    gridwidth: [1170, 1024, 778, 480],
+                    gridheight: [650, 768, 960, 720],
+                    lazyType: "none",
+                    parallax: {
+                        origo: "slidercenter",
+                        speed: 1000,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 100, 55],
+                        type: "scroll"
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "on",
+                    stopAfterLoops: 0,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "0",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            });
+        </script>
+        <!-- Slider Revolution Ends -->
+
+    </div>
+</section>
+
+<!-- Section: About -->
+<section id="about" class="">
+    <div class="container pb-0">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="letter-space-4 text-gray-darkgray text-uppercase mt-0 mb-0">Giới thiệu</h6>
+                    <h2 class="text-uppercase font-weight-500 mt-0 font-28 line-bottom">Bóng đá <span style="color: #e42f2f;" class="text-theme-color-2 font-weight-400">Jindo</span></h2>
+                    <p class="text-theme colored limited-text-3">Trung tâm bóng
+                    đá JINDO - Nơi đào tạo đá bóng cho moi nguoi tốt nhất tại Hà
+                    Nội. Với các khóa học, lớp học bóng đá từ cơ bản đến nâng
+                    cao giúp cho các em phát triển toàn diện nhất. Trung tâm đã
+                    và đang là địa điểm thu hút rất nhiều học viên, được đánh
+                    giá chất lượng dạy bóng đá tốt nhất. Chúng tôi tự hào là nơi
+                    xây dựng và phát triển niềm đam mê của các em thiếu nhi.
+                    Hiện tại trung tâm có rất nhiều lớp học bóng đá được tổ chức
+                    tại nhiều quận trên địa bàn thành phố Hà Nội. Với đội ngũ
+                    giảng viên là các hlv chuyên nghiệp từ các câu lạc bộ bóng
+                    đá và từ giảng viên các trường ĐH Thể thao. Đăng ký lớp học
+                    bóng đá cho trẻ em, hãy liên hệ ngay với Trung tâm dạy bóng
+                    đá JINDO.</p class="">
+
+                    <a class="btn btn-theme-colored btn-flat btn-lg mt-10 mb-sm-30" href="/gioi-thieu">Đọc thêm →</a>
+                </div>
+                <div class="col-md-6 image">
+                    <div class="video-popup">
+
+                        <img alt="" src="theme/images/playing.jpg" class="img-responsive img-fullwidth">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Tại sao cho học thể thao-->
+<section id="#reason">
+    <div class="container  pb-30">
+
+        <div class="section-title mb-10">
+            <div class="row">
+                <div class="col-md-10">
+                    <h2 class="text-uppercase font-weight-500 mt-0 font-28 line-bottom">Tại sao nên cho con học chơi <span class="text-theme-color-2 font-weight-400">Thể thao</span></h2>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-1">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Nâng cao sức khỏe cho trẻ</h4>
+                            <p class="font-italic text-justify"><em>Ngoài dinh
+                            dưỡng, việc vận động, chơi thể thao còn giúp trẻ
+                            phát triển chiều cao, cơ bắp, có hệ tim mạch khỏe
+                            mạnh. Đồng thời việc tập thể thao còn giúp trẻ giảm
+                            nguy cơ béo phì và tạo nền tảng thể chất tốt cho trẻ
+                            cho đến khi chúng trưởng thành</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-2">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Giải tỏa căng thẳng sau những giờ học trên lớp</h4>
+                            <p class="font-italic text-justify"><em>Khi vận
+                            động, chơi thể thao ngoài trời, trẻ có cảm giác hạnh
+                            phúc và thoải mái hơn. Điều này giúp bé giải toả
+                            những căng thẳng, áp lực sau giờ học ở trường, học
+                            thêm… Vì vậy trẻ sẽ không bị uể oải, mệt mỏi, tăng
+                            sự tập trung, ghi nhớ khi học, vì thế kết quả học
+                            tập sẽ tốt hơn.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-3">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Giúp trẻ tự tin, hòa đồng hơn</h4>
+                            <p class="font-italic text-justify"><em>Nếu bé nhà
+                            bạn là một đứa trẻ nhút nhát thì việc tham gia chơi
+                            đá bóng, bóng rổ… sẽ giúp trẻ tự tin, hòa đồng hơn.
+                            Với cách dạy con qua trò chơi này, ba mẹ có thể giúp
+                            bé vượt qua những lo lắng, rụt rè để xông xáo hơn,
+                            tự tin hơn trong giao tiếp.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-4">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Rèn tính kỉ luật</h4>
+                            <p class="font-italic text-justify"><em>Đối với các
+                            môn thể thao chơi nhiều người, trẻ sẽ học được tính
+                            kỷ luật thông qua quá trình tập luyện, thi đấu. Mỗi
+                            môn thể thao sẽ có những nguyên tắc, luật chơi buộc
+                            bé phải tuân theo nếu muốn chơi cùng. Vì vậy, bé sẽ
+                            dần hình thành ý thức và tuân theo kỷ luật đó. Điều
+                            này sẽ giúp trẻ trở thành người sống kỹ luật hơn
+                            trong cuộc sống.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-5">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Học các kĩ năng sống, kĩ năng làm việc nhóm</h4>
+                            <p class="font-italic text-justify"><em>Việc làm
+                            quen, tập luyện với các môn thể thao như là vừa chơi
+                            vừa học bởi bé có thể học hỏi thêm nhiều kỹ năng
+                            sống .</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4 mb-20">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div class="icons-football-6">
+
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-xs-10">
+                            <h4 class="text-theme-colored">Tạo được kĩ năng thiết lập mục tiêu</h4>
+                            <p class="font-italic text-justify"><em>Khi chơi thể
+                            thao, các bé sẽ được giáo dục dưới sự chỉ dẫn của
+                            huấn luyện viên hoặc của người hướng dẫn. Các bé sẽ
+                            được tập luyện theo nhóm nên kỹ năng làm việc theo
+                            nhóm sẽ rất tốt. Hơn nữa, trong quá trình luyện tập
+                            hay thi đấu, các bé đều phải có mong ước giành mục
+                            tiêu và làm cách nào để thành công.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+</section>
+
+
+<!-- Divider: Funfact -->
+<section class="divider parallax layer-overlay overlay-theme-colored-9" data-bg-img="theme/images/Slider2.jpg" data-parallax-ratio="0.7">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 md-50">
+                <div class="funfact text-center">
+                    <i class="pe-7s-smile mt-5 text-theme-color-2"></i>
+                    <h2 data-animation-duration="2000" data-value="<%=configs.students_number%>" class="animate-number text-white mt-0 font-38 font-weight-500">0</h2>
+                    <h5 class="text-white text-uppercase mb-0">Học viên <br> theo học tại trung tâm</h5>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 md-50">
+                <div class="funfact text-center">
+                    <i class="pe-7s-note2 mt-5 text-theme-color-2"></i>
+                    <h2 data-animation-duration="2000" data-value="<%=configs.places_number%>" class="animate-number text-white mt-0 font-38 font-weight-500">0</h2>
+                    <h5 class="text-white text-uppercase mb-0">Địa điểm <br> trên 13 quận/huyện Hà Nội</h5>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 md-50">
+                <div class="funfact text-center">
+                    <i class="pe-7s-users mt-5 text-theme-color-2"></i>
+                    <h2 data-animation-duration="2000" data-value="<%=configs.coaches_number%>" class="animate-number text-white mt-0 font-38 font-weight-500">0</h2>
+                    <h5 class="text-white text-uppercase mb-0">Giảng viên <br> đang giảng dạy tại trung tâm</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Teachers -->
+
+<section id="teachers" class="bg-lighter">
+    <div class="container pb-30">
+        <div class="section-title mb-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="text-uppercase font-weight-500 mt-0 font-28 line-bottom">Đội ngũ <span class="text-theme-color-2 font-weight-400">HLV</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel-4col" data-dots="true">
+                        <!-- <%coaches.forEach(function(coach) {%>
+                            <div class="team maxwidth400">
+                                <div class="thumb1" style="background-image: url('<%=coach.avatar%>');"></div>
+                                <div class="content border-1px border-bottom-theme-color-2-2px p-15 bg-light clearfix">
+                                  <h4 class="name text-theme-color-2 limited-text-2 mt-0"> <small>HLV</small> <%=coach.name%></h4>
+                                  <p class="mb-20 limited-text-2"><%=coach.description%></p>                                
+                                </div>
+                              </div>
+                      <%})%>-->
+
+                        <%coaches.forEach(function(coach) {%>
+                            <div class="item ">
+                                <div class="service-block bg-white">
+                                    <div class="thumb"> <img alt="featured project" src="<%=coach.avatar%>" class="img-fullwidth img-slide">
+
+                                    </div>
+                                    <div class="content border-1px border-bottom-theme-color-2-2px p-15 bg-light clearfix">
+                                        <h4 class="name text-theme-color-2 limited-text-2 mt-0"> <small>HLV</small>
+                                            <%=coach.name%>
+                                        </h4>
+                                        <p class="mb-20 limited-text-2">
+                                            <%=coach.description%>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Divider: testimonials -->
+<section class="divider parallax layer-overlay overlay-theme-colored-9" data-background-ratio="0.5" data-bg-img="theme/images/Slider2.jpg">
+    <div class="container pb-20">
+        <div class="section-title">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- <h5 class="font-weight-300 m-0 text-gray-lightgray">Cảm nhận của phụ huynh về Jindo</h5> -->
+                    <h2 class="mt-0 mb-0 text-uppercase line-bottom text-white font-28">Cảm nhận của <span class="text-theme-color-2 font-weight-400">Phụ huynh</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-10">
+                <div class="owl-carousel-2col boxed" data-dots="true">
+                    <div class="item">
+                        <div class="testimonial pt-10">
+                            <div class="thumb pull-left mb-0 mr-0 pr-20">
+                                <img style="width: 75px!important;" class="img-circle" alt="" src="theme/images/phu_huynh_01.png">
+                            </div>
+                            <div class="ml-100 ">
+                                <h4 class="text-white mt-0">Phụ huynh của bé
+                                Nguyễn Minh Tuấn và Nguyễn Minh Dũng đang theo
+                                học lớp Bóng đá tại<b> cơ sở Đông Đô </b>được 3 năm có
+                                chia sẻ: “Chị rất hài lòng về Trung tâm Thể thao
+                                JINDO. Các thầy dạy rất nhiệt tình, luôn chu đáo
+                                hướng dẫn chi tiết cho các con. Hai bé nhà mình
+                                đang học bóng đá rất hiệu quả. Các con đã năng
+                                động hơn trước nhiều. Cảm ơn Trung tâm JINDO”
+                                .</h4>
+                                <p style="font-size: 22px;" class="author mt-20">- <span class="text-theme-color-2">Chị Dương Kiều Vân </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial pt-10">
+                            <div class="thumb pull-left mb-0 mr-0 pr-20">
+                                <img style="width: 75px!important;" class="img-circle" alt="" src="theme/images/phu_huynh_02.jpg">
+                            </div>
+                            <div class="ml-100 ">
+                                <h4 class="text-white mt-0">Phụ huynh  học viên
+                                Vũ Gia Bảo đang theo học lớp Bóng đá tại <b>cơ sở
+                                Cầu Đơ </b>chia sẻ: “Con trai mình đã trở nên năng
+                                động và tự tin thể hiện bản thân hơn từ khi tham
+                                gia lớp Bóng đá tại Trung tâm JINDO. Con được
+                                giải tỏa stress sau những giờ học căng thẳng.
+                                Đây là một lớp học rất bổ ích cho các con. Mình
+                                nghĩ các bậc phụ huynh nên tạo điều kiện cho các
+                                con có cơ hội tham gia vào những lớp học như vậy
+                                để các con có cơ hội phát triển toàn diện về cả
+                                thể chất lẫn tinh thần”</h4>
+                                <p style="font-size: 22px;" class="author mt-20">- <span class="text-theme-color-2">Anh Vũ Huy Hoàng </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial pt-10">
+                            <div class="thumb pull-left mb-0 mr-0 pr-20">
+                                <img style="width: 75px!important;" class="img-circle" alt="" src="https://media.lamchame.vn/images/2018/03/28/ee615974-1c7d-4aeb-b696-e1213a09bf618.jpg">
+                            </div>
+                            <div class="ml-100 ">
+                                <h4 class="text-white mt-0">Phụ huynh của bạn
+                                Nguyễn Quốc Quân đang theo học lớp Bóng đá tại
+                                <b>cơ sở Định Công Hạ</b> được 4 năm chia sẻ: “Con mình
+                                đã có những giờ học thể thao rất vui và bổ ích
+                                tại Trung tâm Thể thao JINDO. Con rất mong chờ
+                                tới cuối tuần để có thể tham gia lớp học cùng
+                                các Thầy và các bạn. Gia đình mình rất vui khi
+                                thấy con có thể phát triển toàn diện và tự tin
+                                hơn trong cuộc sống hàng ngày”. </h4>
+                                <p style="font-size: 22px;" class="author mt-20">- <span class="text-theme-color-2">Chị Lan </span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: blog -->
+<section id="blog">
+    <div class="container pt-40">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-uppercase font-weight-500 mt-0 font-28 line-bottom">Tin tức <span class="text-theme-color-2 font-weight-400">thể thao</span></h2>
+                    <div class="owl-carousel-3col owl-nav-top" data-nav="true">
+                        <%articles.forEach(function(article) {%>
+                            <div class="item">
+                                <article class="post clearfix bg-lighter">
+                                    <div class="entry-header">
+                                        <div class="post-thumb thumb">
+                                            <img src="<%=article.cover_image%>" alt="" class="img-responsive img-fullwidth img-slide-blog">
+                                        </div>
+                                    </div>
+                                    <div class="entry-content p-15 pt-10 pb-10">
+                                        <div class="entry-meta media no-bg no-border mt-0 mb-10">
+                                            <div class="media-body pl-0">
+                                                <div class="event-content pull-left flip">
+                                                    <h4 class="entry-title text-uppercase font-weight-600 m-0 mt-5">
+                                                        <a class="title-blog limited-text-2" href="/bai-viet-<%=article.slug%>">
+                                                            <%=article.title%>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 limited-text-3">
+                                            <%=article.summary%>
+                                        </div>
+                                        <a class="text-theme-color-2 font-14 ml-0" href="/bai-viet-<%=article.slug%>">Đọc thêm</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Contact -->
+<section id="register" ng-controller="signUp" class="register-container" >
+    <div class="container pb-60">
+        <div class="section-title mb-10">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mt-0 mb-0 text-uppercase line-bottom text-white font-28">Đăng ký <span class="text-theme-color-2 font-weight-400">Học</span></h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="section-content" ng-controller="courseCtrl" ng-init="initCourseData()">
+            <div class="row">
+                <div class="col-md-6 pb-10">
+                    <!-- Ưu đãi -->
+                    <div class="reward-container">
+                        <h2 class="text-pink coupon-title">Đăng ký học nhận ngay ưu đãi lớn</h2>
+                        <p class="coupon-p">{{courses[0].typecourse}}: <span class="text-pink">{{courses[0].price}}vnd</span></p>
+                        <p class="coupon-p">{{courses[1].typecourse}}: <del>{{courses[1].price}}vnd</del>   <span class="text-pink">{{courses[1].priceafter}}vnd </span>(-{{courses[1].sale}})</p>
+                        <p class="coupon-p">{{courses[2].typecourse}}: <del>{{courses[2].price}}vnd</del>   <span class="text-pink">{{courses[2].priceafter}}vnd </span>(-{{courses[2].sale}})</p>
+                        <p class="coupon-p">Tặng 1 bộ đồng phục 250k, 1 đôi tất 50k, 1 balo dây rút 50k</p>
+                    </div>
+
+                    <div class="reward-pic">
+                        <img src="theme/images/reward.jpg" alt="" style="width: 100%; height: 250px;">
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="register-form-container">
+                        <!-- Form đăng ký-->
+                        <form id="register_form">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="">Thông tin phụ huynh</label>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.name_parent" class="form-control" type="text" placeholder=" Họ tên">
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.address" class="form-control" type="text" placeholder="Địa chỉ ">
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.phone" class="form-control" type="text" placeholder="SĐT">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Thông tin học viên</label>
+                                    <div class="form-group mb-30">
+                                        <input ng-model="Registers.name_kid" class="form-control" type="text" placeholder="Họ tên ">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-30 ">
+                                            <input id="datepicker" class="form-control" type="text" placeholder="Năm sinh">
+                                        </div>
+                                        <div class="form-group col-md-6  mb-30">
+                                            <select class="form-control" id="sex" ng-model="Registers.sex" style="color: #a8a8a8">
+                      <option value="">Giới Tính</option>
+                      <option value="Nam">Nam</option>
+                      <option value="Nữ">Nữ</option>
+                    </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group mb-30">
+                                        <select class="form-control" ng-model="Registers.courses" style="color: #a8a8a8;">
+                  <option value="">Khóa Học</option>
+                  <option value="Khóa Học Bóng Đá">Khóa Học Bóng Đá</option>
+                  <option value="Khóa Học Bóng Rổ">Khóa Học Bóng Rổ</option>
+                </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group ">
+                                <textarea ng-model="Registers.question" class="form-control required " rows="5 " placeholder="Giải đáp thắc mắc "></textarea>
+                            </div>
+                            <div class="form-group ">
+                                <button ng-click="Registers.submit()" class="btn btn-flat btn-theme-colored text-uppercase mt-20 mb-sm-30 border-left-theme-color-2-4px ">Đăng ký ngay</button>
+                            </div>
+                        </form>
+                        <!-- Contact Form Validation-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->

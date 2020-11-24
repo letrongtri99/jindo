@@ -1,0 +1,215 @@
+<style>
+    .ellipsis4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 200px;
+        min-width: 70px;
+    }
+    
+    .ellipsis3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 150px;
+    }
+    
+    .ellipsis0 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 90px;
+    }
+    
+    .table-bordered tr td {
+        padding: 6px !important;
+    }
+    
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+    
+    .ellipsis1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 170px;
+    }
+    
+    .ellipsis2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 170px;
+        min-width: 120px;
+    }
+    
+    .modal-dialog {
+        width: 100%;
+        height: auto;
+    }
+    
+    .modal-content {
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    .btn-info-tools {
+        font-size: 12px;
+        padding: 5px;
+        margin-right: 5px;
+    }
+    
+    .btn-info-add-more {
+        /* padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 14px;
+        margin-bottom: 10px; */
+        cursor: pointer;
+        font-size: 12px;
+        padding: 3px;
+    }
+    
+    td.ng-scope {
+        padding: 7px;
+    }
+    
+    body.modal-open {
+        overflow: hidden;
+    }
+    
+    .table-bordered thead tr th {
+        text-align: center;
+        font-size: 16px;
+        padding: 14px;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    td.title-configs {
+        width: 300px !important;
+    }
+    
+    .table tbody tr td:nth-of-type(2) {
+        padding-left: 30px !important;
+    }
+</style>
+<div ng-controller="configsInfo" id="boss">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Thông Tin Chung</h6>
+        </div>
+        <a href="" role="button" ng-click="openModal()" class="btn btn-info btn-info-add-more " style="width:11%;margin-left: 20px;margin-top: 10px; color: #fff;">Chỉnh Sửa</a>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="table" width="100%" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="title-configs">Địa chỉ chính</td>
+                            <td id="address" data="<%=configs[0].address%>" >
+                                <%=configs[0].address%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td>
+                            <td id="email" data="<%=configs[0].mail%>">
+                                <%=configs[0].mail%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Đường link youtube</td>
+                            <td id="link_yt" data="<%=configs[0].link_yt%>">
+                                <%=configs[0].link_yt%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Đường link facebook</td>
+                            <td id="link_fb" data="<%=configs[0].link_fb%>">
+                                <%=configs[0].link_fb%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại hlv chính</td>
+                            <td id="phone_number" data="<%=configs[0].phone_number%>">
+                                <%=configs[0].phone_number%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Số học viên</td>
+                            <td id="students_number" data="<%=configs[0].students_number%>">
+                                <%=configs[0].students_number%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Số địa điểm</td>
+                            <td id="places_number" data="<%=configs[0].places_number%>">
+                                <%=configs[0].places_number%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Số huấn luyện viên</td>
+                            <td id="coaches_number" data="<%=configs[0].coaches_number%>"> 
+                                <%=configs[0].coaches_number%>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Nhập địa chỉ chính</label>
+                            <input ng-model="configs.address" type="text" class="form-control">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Nhập email</label>
+                                <input ng-model="configs.mail" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Nhập đường link youtube</label>
+                                <input ng-model="configs.link_yt" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nhập đường link facebook</label>
+                            <input ng-model="configs.link_fb" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nhập số điện thoại hlv chính</label>
+                            <input ng-model="configs.phone_number" type="text" class="form-control">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Nhập số học viên</label>
+                                <input ng-model="configs.students_number"  string-to-number type="number" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Nhập số địa điểm</label>
+                                <input ng-model="configs.places_number" string-to-number  type="number" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Nhập số huấn luyện viên</label>
+                                <input  ng-model="configs.coaches_number" string-to-number type="number" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="closeModal()" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button ng-click="update()" type="button" class="btn btn-primary">Chỉnh Sửa</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/admin/configsAdmin.js"></script>
+    </div>

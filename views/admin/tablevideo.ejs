@@ -1,0 +1,119 @@
+<style>
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 500px;
+        min-width: 70px;
+    }
+    
+    .ellipsis0 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 200px;
+    }
+    
+    .modal-dialog {
+        width: 100%;
+        height: auto;
+    }
+    
+    .modal-content {
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    .btn-info {
+        font-size: 12px;
+        padding: 3px;
+    }
+    
+    td.ng-scope {
+        padding: 6px;
+    }
+    
+    body.modal-open {
+        overflow: hidden;
+    }
+</style>
+<div ng-controller="tablecoaches" ng-init="initTable()" id="boss">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách link video</h6>
+        </div>
+        <a role="button" href="" ng-click="showNew()" class="btn btn-info" style="width:12%;margin-left: 20px;margin-top: 10px;">Thêm Video mới</a>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="table" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên video</th>
+                            <th>Link youtube</th>
+                            <th>Công Cụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nhập tên video</label>
+                            <input maxlength="255" ng-model="video.title" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Đường link youtube</label>
+                            <textarea maxlength="255" ng-model="video.path" type="text" class="form-control" rows="1"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Ảnh đại diện( khuyến cáo đăng ảnh kích cỡ 273x190)</label>
+                            <input type="file" onchange="angular.element(this).scope().uploadImage(event)" class="form-control" />
+                        </div>
+                        <div style="margin-bottom: 10px;" id="imgHelp" role="alert">{{video.alert}}</div>
+                        <div ng-style="{'background-image':'url('+video.link+')'}" style="width: 273px;height: 190px;background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button ng-click="create()" type="button" class="btn btn-primary">Thêm mới</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nhập tên video</label>
+                            <input maxlength="255" ng-model="video.title" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Đường link youtube</label>
+                            <textarea maxlength="255" ng-model="video.path" type="text" class="form-control" rows="1"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Ảnh đại diện( khuyến cáo đăng ảnh kích cỡ 273x190)</label>
+                            <input type="file" onchange="angular.element(this).scope().uploadImage(event)" class="form-control" />
+                        </div>
+                        <div style="margin-bottom: 10px;" id="imgHelp" role="alert">{{video.alert}}</div>
+                        <div ng-style="{'background-image':'url('+video.link+')'}" style="width: 273px;height: 190px;background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button ng-click="update(video.id)" type="button" class="btn btn-primary">Chỉnh Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin/tablevideo.js"></script>
+</div>

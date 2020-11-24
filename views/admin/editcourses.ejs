@@ -1,0 +1,122 @@
+<style>
+    .btn-info {
+        font-size: 12px;
+        padding: 3px;
+    }
+    
+    td.ng-scope {
+        padding: 6px;
+    }
+    
+    th.sorting_disabled {
+        width: 100px;
+    }
+    
+    .ellipsis0 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 200px;
+    }
+</style>
+
+<div ng-controller="khoahoc" ng-init="showTableCourses()">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh Sách Khóa Học</h6>
+        </div>
+        <a href="" role="button" ng-click="addnew()" class="btn btn-info" style="width:12%;margin-left: 20px;margin-top: 20px;">Thêm Khóa Học Mới</a>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="table" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên Khóa Học</th>
+                            <th>Số Tiền</th>
+                            <th>Mức Giảm</th>
+                            <th>Tiền Học Còn Lại</th>
+                            <th>Công Cụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card-header py-3" style="margin-bottom: 10px;text-align: center;">
+                        <h6 class=" font-weight-bold text-primary" style="font-size: 20px;">THÊM KHÓA HỌC MỚI</h6>
+                    </div>
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tên khóa học</label>
+                            <div class="col-sm-10">
+                                <input ng-model="courses.typecourse" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Tiền học ban đầu</label>
+                                <input ng-model="courses.price" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Mức giảm</label>
+                                <input ng-model="courses.sale" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Tiền học còn lại</label>
+                                <input ng-model="courses.priceafter" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button ng-click="new()" type="button" class="btn btn-primary">Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card-header py-3" style="margin-bottom: 10px;text-align: center;">
+                        <h6 class=" font-weight-bold text-primary" style="font-size: 20px;">THÊM KHÓA HỌC MỚI</h6>
+                    </div>
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tên khóa học</label>
+                            <div class="col-sm-10">
+                                <input ng-model="courses.typecourse" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Tiền học ban đầu</label>
+                                <input ng-model="courses.price" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Mức giảm</label>
+                                <input ng-model="courses.sale" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Tiền học còn lại</label>
+                                <input ng-model="courses.priceafter" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button ng-click="update(courses.id)" type="button" class="btn btn-primary">Chỉnh Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin/tablecourses.js"></script>
+</div>

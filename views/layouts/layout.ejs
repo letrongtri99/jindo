@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html ng-app="JindoFrontEnd" ng-cloak>
+
+<head>
+    <title>Jindo</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+        <%/* <meta name="robots" content="noindex"> */%>
+
+            <!-- Favicon and Touch Icons -->
+            <link href="/theme/images/favicon.png" rel="shortcut icon" type="image/png">
+            <link href="/theme/images/apple-touch-icon.png" rel="apple-touch-icon">
+            <link href="/theme/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+            <link href="/theme/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+            <link href="/theme/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+            <!-- Stylesheet -->
+            <link href="/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="/theme/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+            <link href="/theme/css/animate.css" rel="stylesheet" type="text/css">
+            <link href="/theme/css/css-plugin-collections.css" rel="stylesheet" />
+            <!-- CSS | menuzord megamenu skins -->
+            <link id="menuzord-menu-skins" href="/theme/css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet" />
+            <!-- CSS | Main style file -->
+            <link href="/theme/css/style-main.css" rel="stylesheet" type="text/css">
+            <!-- CSS | Preloader Styles -->
+            <link href="/theme/css/preloader.css" rel="stylesheet" type="text/css">
+            <!-- CSS | Custom Margin Padding Collection -->
+            <link href="/theme/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+            <!-- CSS | Responsive media queries -->
+            <link href="/theme/css/responsive.css" rel="stylesheet" type="text/css">
+            <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+            <link href="/theme/css/style.css" rel="stylesheet" type="text/css">
+
+            <!-- Revolution Slider 5.x CSS settings -->
+            <link href="/theme/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
+            <link href="/theme/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
+            <link href="/theme/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+
+
+            <!-- CSS | Theme Color -->
+            <link href="/theme/css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+
+            <!-- external javascripts -->
+            <script src="/theme/js/jquery-2.2.4.min.js"></script>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> -->
+            <script src="/theme/js/jquery-ui.min.js"></script>
+            <script src="/theme/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+            <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"> -->
+
+            <!-- JS | jquery plugin collection for this theme -->
+            <script src="/theme/js/jquery-plugin-collection.js"></script>
+
+            <!-- Revolution Slider 5.x SCRIPTS -->
+            <script src="/theme/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+            <script src="/theme/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+
+
+            <link href="/theme/js/simplePagination.css" rel="stylesheet">
+            <script src="/theme/js/jquery.simplePagination.js" type="text/javascript"></script>
+
+
+
+
+
+            <!-- End CSS for schedules-->
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+            <!--STYLES-->
+            <!-- <link rel="stylesheet" href="/styles/importer.css"> -->
+            <!--STYLES END-->
+</head>
+
+<body class="" ng-controller="layoutCtrl" ng-init="initData()">
+
+    <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+        }
+        (document, 'script', 'facebook-jssdk'));
+      </script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="2319725451639966"
+        theme_color="#0084ff">
+      </div>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-middle p-0 bg-lightest xs-text-center">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-6">
+                        <div class="widget no-border m-0">
+                            <a class="menuzord-brand pull-left flip xs-pull-center mb-15" href="/"><img src="/theme/images/bongdajindo2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-6 hidden-header">
+                        <div class="widget no-border pull-right sm-pull-none sm-text-center mt-10 mb-10 m-0">
+                            <ul class="list-inline">
+                                <li>
+                                    <h5 class="font-20 m-0" style="color: #fdc006;
+                      font-weight: 600;
+                      font-style: italic;"> {{configs.phone_number}}</h5>
+                                </li>
+                                <li><a href="tel:{{configs.phone_number}}"><i
+                      class="fa fa-phone-square text-theme-colored font-36 mt-5 sm-display-block"></i></a></li>
+                                <li><a href="{{configs.link_fb}}" target="_blank"><i
+                      class="fa fa-facebook-square text-theme-colored font-36 mt-5 sm-display-block"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="header-nav">
+            <div class="header-nav-wrapper navbar-scrolltofixed bg-theme-colored border-bottom-theme-color-2-1px">
+                <div class="container">
+                    <nav id="menuzord" class="menuzord bg-theme-colored pull-left flip menuzord-responsive">
+                        <ul class="menuzord-menu">
+                            <li><a class="active" href="/">Trang chủ</a></li>
+                            <li><a href="/gioi-thieu" class="active">Giới thiệu</a></li>
+                            <li><a href="/lich-hoc" class="active">Lịch học</a>
+                            </li>
+                            <li><a class="active" href="/dang-ky">Đăng ký học bóng đá</a>
+                            </li>
+                            <li><a class="not-actived">Tin tức thể thao</a>
+                                <ul class="dropdown">
+                                    <li><a href="/tin-tong-hop">Tin tức thể thao</a></li>
+                                    <li><a href="/ky-thuat">Kỹ thuật thể thao</a></li>
+                                    <li><a href="/tin-tuc-clb">Tin tức các CLB</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/hinh-anh-trung-tam" class="active">Hình ảnh trung tâm</a></li>
+                            <li><a href="/lien-he">Liên hệ</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+        <a class="contact-buttons" style="display: none;" href="tel:{{configs.phone_number}}"><i
+        class="fa fa-phone-square text-theme-colored font-36 mt-5 sm-display-block"></i></a>
+
+    </header>
+
+    <!--Start Main Content-->
+    <div class="main-content">
+        <%- body %>
+    </div>
+    <!--End Main Content-->
+
+    <!-- Footer -->
+    <footer id="footer " class="footer divider layer-overlay">
+        <div class="container ">
+            <div class="row border-bottom ">
+                <div class="col-md-1 col-xs-12">
+                    <!--Logo-->
+                    <img class="mt-5 mb-20 " alt=" " src="/theme/images/logo_footer.png " style="border:1px solid; border-radius:50%; width:65px;height: 65px;">
+                </div>
+                <div class="col-sm-6 col-md-4 ">
+                    <div class="widget dark ">
+                        <h2 class="footer-title">Thông tin liên hệ</h2>
+                        <p class="footer-subtitle text-uppercase">Bóng đá JINDO</p>
+                        <ul class="list-inline mt-5 ">
+                            <li class="m-0 pl-10 pr-10 " style="color: #fff;"> <i class="fa fa-map-marker text-theme-color-2 mr-5 "></i> {{configs.address}}</li><br>
+                            <li class="m-0 pl-10 pr-10 "> <i class="fa fa-facebook text-theme-color-2 mr-5 "></i> <a href="{{configs.link_fb}}" target="_blank">{{configs.link_fb}}</a> </li><br>
+                            <li class="m-0 pl-10 pr-10 "> <i class="fa fa-phone text-theme-color-2 mr-5 "></i> <a href="tel:{{configs.phone_number}}">{{configs.phone_number}}</a> </li><br>
+                            <li class="m-0 pl-10 pr-10 " style="color: #fff;"> <i class="fa fa-envelope-o text-theme-color-2 mr-5 "></i> <a href="mailto:{{configs.mail}}">{{configs.mail}}</a></li><br>
+                            <li class="m-0 pl-10 pr-10 "> <i class="fa fa-globe text-theme-color-2 mr-5 "></i> <a href="http://thethaojindo.vn">thethaojindo.vn</a> </li><br>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="widget dark ">
+                        <ul class="list angle-double-right list-border ">
+                            <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="/lich-hoc">Lịch học</a></li>
+                            <li><a href="/tin-tong-hop">Tin tổng hợp</a></li>
+                            <li><a href="/lien-he">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 " ng-controller="layoutCtrl" ng-init="initData()">
+                    <div class="widget dark ">
+                        <!--Link facebook-->
+                        <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthethaojindo&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="340" height="180"
+                        style="border:none;overflow:hidden" scrolling="no"
+                        frameborder="0" allowTransparency="true"
+                        allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Footer Scripts -->
+    <!-- JS | Custom script for all pages -->
+    <script src="/theme/js/custom.js "></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+          (Load Extensions only on Local File Systems ! 
+           The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.actions.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.migration.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js "></script>
+    <script type="text/javascript " src="/theme/js/revolution-slider/js/extensions/revolution.extension.video.min.js "></script>
+    <!-- <script type="text/javascript "
+    src="//connect.facebook.net/en_US/sdk/xfbml.customerchat.js"></script> -->
+    <script type="text/javascript " async src="https://www.googletagmanager.com/gtag/js?id=UA-155391276-1"></script>
+    <!-- <script src="js/front_enddd/homepage.js"></script> -->
+    <script src="/js/front_enddd/layout.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <!-- <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e09bbb227773e0d832b27c4/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script> -->
+    <!--End of Tawk.to Script-->
+    <!-- Load Facebook SDK for JavaScript -->
+      <!-- <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-Your Chat Plugin code -->
+      <!-- <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="110441434028087">
+      </div> -->
+    <!-- <script>
+        var div = document.createElement('div');
+        div.className = 'fb-customerchat';
+        div.setAttribute('page_id', '1020601744684807');
+        div.setAttribute('ref', '');
+        document.body.appendChild(div);
+        window.fbMessengerPlugins = window.fbMessengerPlugins || {
+        init: function () {
+            FB.init({
+            appId            : '1678638095724206',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.3'
+            });
+        }, callable: []
+        };
+        window.fbAsyncInit = window.fbAsyncInit || function () {
+        window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
+        window.fbMessengerPlugins.init();
+        setTimeout(function () {
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        }, 0);
+        };
+    </script> -->
+    <!-- Load Facebook SDK for JavaScript -->
+    
+    <!--CHAT ZALO-->
+    
+
+
+    <script src="/theme/js/table_schedules.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155391276-1"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155391276-1');
+    </script>
+    
+
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+    <div class="zalo-chat-widget" data-oaid="819027575546451268" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+    <style>
+        .zalo-chat-widget {bottom:100px !important;cursor:pointer !important; right: 100px;}
+        .zalo-chat-widget:hover {cursor:pointer !important;}
+    </style>
+
+
+</body>
+
+</html>
